@@ -29,12 +29,11 @@ add_action( 'init', 'pbrocks_wp_app_init' );
 function pbrocks_wp_app_init() {
 	register_block_type( __DIR__ . '/build/some-tabs' );
 	register_block_type( __DIR__ . '/build/first-app' );
-	// register_block_type( __DIR__ . '/build/guten-app' );
 }
 
 add_filter( 'block_categories_all', 'pbrocks_wp_app_register_block_categories', 10, 2 );
 /**
- * Register NASA block category
+ * Register block categories
  *
  * @param  array          $categories The block categories that exist on site.
  * @param  WP_Post object $post Types of posts registered on site.
@@ -82,10 +81,11 @@ function pbrocks_wp_app_admin_menu() {
  * @return void HTML string output to the browser.
  */
 function pbrocks_wp_app_admin_menu_callback() {
-		  echo '<div class="wrap">';
+
+	echo '<div class="wrap">';
 
 	echo '<h2>' . ucwords( preg_replace( '/_+/', ' ', __FUNCTION__ ) ) . '</h2>';
-	echo '<p class="description">If you don\'t see anything, you may need to import the xml file in this app\'s folder.</p>';
+	echo '<p class="description">Starter info inserts the date into this page. We will add posts. If you don\'t have posts, you may want to import the xml file in this app\'s folder.</p>';
 	echo '<h3>This site\'s Posts</h3>';
 	echo '<div class="outer-wrap">';
 	echo '<div id="pbrocks-first-test">innerHTML = Date</div>';
@@ -98,14 +98,9 @@ function pbrocks_wp_app_admin_menu_callback() {
 			if (event.target.readyState === 'interactive') {
 				insertFormattedDate( new Date());
 				displayDate(new Date(2026, 6, 26));
-				// document.getElementById("pbrocks-first-test").innerHTML = 'interactive';
 			}
 			else if (event.target.readyState === 'complete') {
 				displayDate(new Date());
-				// insertFormattedDate( new Date());
-
-			 // document.getElementById("pbrocks-first-test").innerHTML = 'Complete';
-			 // document.getElementById("pbrocks-first-test").innerHTML = new Date(2027, 3, 6);
 			}
 		});
 		function insertDate() {
@@ -140,16 +135,6 @@ function pbrocks_wp_app_admin_menu_callback() {
 			console.log(today.toLocaleDateString('hi-IN', options));
 			return today.toLocaleDateString('en-US', options);
 		}
-		// Alternative to DOMContentLoaded event
-		// document.onreadystatechange = function () {
-		//  if (document.readyState === 'interactive') {
-		//      // showTheApp()
-		//  }
-		// }
-
-		// function showTheApp() {
-		//  render(<MyFirstApp />, document.getElementById('pbrocks-first-wp-app'));
-		// }
 	</script>
 
 	<?php
