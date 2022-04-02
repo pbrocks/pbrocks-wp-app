@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "pbrocks-wp-app/first-app",
+	"version": "0.1.0",
+	"title": "First App Info",
+	"category": "pbrocks-wp-apps",
+	"icon": {
+		"background": "#29c8aa",
+		"foreground": "white",
+		"src": "carrot"
+	},
+	"example": "",
+	"description": "Tabbed content to show more content options in a screen.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "pbrocks-wp-app",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
