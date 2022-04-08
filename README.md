@@ -1,10 +1,8 @@
 # pbrocks-wp-app
 
-
 ## `wp-env`
 
 ### Getting Started
-
 
 #### Prerequisites: Docker
 
@@ -37,5 +35,29 @@ To end your session, type:
 ```sh
 wp-env stop
 ```
+
+### Splash Screen
+
+Assuming things went according to plan, you should see:
+
+![WordPress 2022 Home Screen](./assets/pbrocks-wp-app-first-setup.png)
+
+### Login Screen
+
+Logging in is no different than any other fresh WordPress installation:
+
+```
+http://localhost:4266/wp-login.php
+```
+
+![wp-login.php](./assets/pbrocks-wp-app—login-screen.png)
+
+### New Post > Add Block
+
+Start a new post or page and click the blue button of the block inserter and you will see two starter blocks:
+
+![wp-login.php](./assets/two-blocks-present.png)
+
+## More Info
 
 For more complete reference, consult: [the Block Editor Handbook page](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/#3-restart-wp-env)
