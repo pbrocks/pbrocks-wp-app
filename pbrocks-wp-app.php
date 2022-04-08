@@ -27,7 +27,7 @@ add_action( 'init', 'pbrocks_wp_app_init' );
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function pbrocks_wp_app_init() {
-	register_block_type( __DIR__ . '/build/some-tabs' );
+	register_block_type( __DIR__ . '/build/some-starter' );
 	register_block_type( __DIR__ . '/build/first-app' );
 }
 
