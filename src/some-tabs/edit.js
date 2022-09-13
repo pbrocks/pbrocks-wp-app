@@ -30,9 +30,17 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit() {
+	const blockProps = useBlockProps();
+
+	const blockClass = 'block-editor-block-list__block wp-block'
+
 	return (
-		<p {...useBlockProps()}>
-			{__('SOME Starter Content – hello from the editor!', 'pbrocks-wp-app')}
-		</p>
+		<div {...useBlockProps()}>
+			<p>{__('SOME Starter Content – hello from the editor!', 'pbrocks-wp-app')}</p>
+			<div>{JSON.stringify(blockProps)}</div>
+			<div>{JSON.stringify(blockProps.className)}</div>
+			<div>{JSON.stringify(blockClass)}</div>
+
+		</div>
 	);
 }

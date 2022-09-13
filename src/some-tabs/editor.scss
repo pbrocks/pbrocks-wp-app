@@ -6,4 +6,8 @@
 
 .wp-block-pbrocks-wp-app-some-tabs {
 	border: 1px dotted #f00;
+	padding: 1rem;
+}
+.wp-block-pbrocks-wp-app-some-tabs.is-selected {
+	background-color: #f2830e;
 }

@@ -20,6 +20,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+import './app-edit';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -30,6 +31,28 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit() {
+	const setButtonLabel = () => {
+		if (select('core/editor').isSavingPost() || select('core/editor').isAutosavingPost()) {
+			return;
+		}
+
+		if (!select('core/editor').isEditedPostSaveable()) {
+			return;
+		}
+
+		const currentStatus = select('core/editor').getEditedPostAttribute('status');
+
+		const statusLabel =
+			currentStatus === 'ready_to_publish'
+				? __('Save as Ready to Publish')
+				: __('Save draft');
+
+		const saveButton = document.getElementsByClassName('components-button editor-post-save-draft is-tertiary');
+
+		if (saveButton && saveButton.length && statusLabel !== '') {
+			saveButton[0].innerText = statusLabel;
+		}
+	};
 	return (
 		<p {...useBlockProps()}>
 			{__(
