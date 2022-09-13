@@ -20,6 +20,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+import MyFirstApp from '../data-basics'
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -31,11 +32,12 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<p {...useBlockProps()}>
-			{__(
+		<div {...useBlockProps()}>
+			<p>{__(
 				'First App Info – editor content will change (will not be a block)!',
 				'pbrocks-wp-app'
-			)}
-		</p>
+			)}</p>
+			<MyFirstApp />>
+		</div>
 	);
 }

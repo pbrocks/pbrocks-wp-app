@@ -15,6 +15,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+require __DIR__ . '/data-basics.php';
+
 add_action( 'init', 'pbrocks_wp_app_init' );
 /**
  * Registers the block using the metadata loaded from the
@@ -81,8 +83,7 @@ function pbrocks_wp_app_admin_menu() {
  * @return void HTML string output to the browser.
  */
 function pbrocks_wp_app_admin_menu_callback() {
-
-	echo '<div class="wrap">';
+	  echo '<div class="wrap">';
 
 	echo '<h2>' . ucwords( preg_replace( '/_+/', ' ', __FUNCTION__ ) ) . '</h2>';
 	echo '<p class="description">Starter info inserts the date into this page. We will add posts. If you don\'t have posts, you may want to import the xml file in this app\'s folder.</p>';
@@ -139,3 +140,5 @@ function pbrocks_wp_app_admin_menu_callback() {
 
 	<?php
 }
+
+
