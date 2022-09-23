@@ -2,6 +2,10 @@
 	"plugins": [
 		"."
 	],
+	"mappings": {
+		"wp-content/plugins": "./wp-core/plugins",
+		"wp-content/themes": "./wp-core/themes"
+	},
 	"port": 4266,
 	"env": {
 		"tests": {
